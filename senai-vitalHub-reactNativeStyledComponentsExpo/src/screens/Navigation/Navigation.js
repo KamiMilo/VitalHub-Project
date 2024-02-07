@@ -18,6 +18,13 @@ export const Navigation = ({ navigation }) => {
         }
       />
 
+     <Button
+        title="EmailCode"
+        onPress={
+          () => navigation.navigate("EmailCode")
+        }
+      />
+
 
 
     </View>
