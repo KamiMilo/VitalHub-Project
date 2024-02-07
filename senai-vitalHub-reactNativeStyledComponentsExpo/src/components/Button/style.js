@@ -24,6 +24,10 @@ background-color: #FAFAFA;
 gap: 10px;
 `
 
+export const ButtonMTop= styled(Button)`
+margin-top: 30px;
+`
+
 //TEXTOS DO BOTÃO
 
 export const ButtonTitle = styled.Text`
