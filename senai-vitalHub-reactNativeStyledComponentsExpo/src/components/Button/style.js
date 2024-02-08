@@ -23,6 +23,11 @@ flex-direction: row;
 background-color: #FAFAFA;
 gap: 10px;
 `
+export const ButtonCenter = styled(ButtonGoogle)`
+border: 1px solid #ffffff;
+align-items: center;
+
+`
 
 export const ButtonMTop= styled(Button)`
 margin-top: 30px;
