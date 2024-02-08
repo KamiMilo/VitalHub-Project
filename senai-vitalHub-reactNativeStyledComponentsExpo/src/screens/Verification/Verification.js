@@ -1,6 +1,7 @@
-import { Container } from "../../components/Container/style"
-import { Input } from "../../components/Input/style"
-import { InputCode } from "../../components/InputCode"
+import { Button, ButtonTitle } from "../../components/Button/style"
+import { ConatinerCode, Container } from "../../components/Container/style"
+import { InputCode } from "../../components/Input/style"
+
 import { LinkBold } from "../../components/LinkMedium/styles"
 import { Logo } from "../../components/Logo/style"
 import { SubTittle } from "../../components/Text/Text"
@@ -16,12 +17,19 @@ export const Verification = () => {
 
       <SubTittle>Digite o código de 4 dígitos enviado para </SubTittle>
 
-      {/* <InputCode>0</InputCode>
-      <InputCode>0</InputCode>
-      <InputCode>0</InputCode>
-      <InputCode>0</InputCode> */}
-    {/* 
-        <Input>Entrar</Input> */}
+
+      <ConatinerCode>
+
+        <InputCode placeholder={'0'} ></InputCode>
+        <InputCode placeholder={'0'}></InputCode>
+        <InputCode placeholder={'0'}></InputCode>
+        <InputCode placeholder={'0'}></InputCode>
+
+      </ConatinerCode>
+
+        <Button> 
+          <ButtonTitle>Verificar</ButtonTitle>
+        </Button>
       <LinkBold>Reenviar Código</LinkBold>
 
     </Container>
