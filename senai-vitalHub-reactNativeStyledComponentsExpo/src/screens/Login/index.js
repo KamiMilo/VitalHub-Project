@@ -23,7 +23,7 @@ export const Login = ({navigation}) => {
         secureTextEntry={true}
       />
       
-      <LinkMedium>Esqueceu sua Senha?</LinkMedium>
+      <LinkMedium onPress={() => {navigation.navigate("Verification")}}>Esqueceu sua Senha?</LinkMedium>
       <Button>
         <ButtonTitle>Entrar</ButtonTitle>
       </Button>
@@ -37,7 +37,7 @@ export const Login = ({navigation}) => {
       
       <ContentAccount>
         <TextAccount>Não tem conta?
-          <LinkBold onPress= {() => {navigation.navigate("RecuperarSenha")}} > Crie uma conta agora</LinkBold>
+          <LinkBold onPress= {() => {navigation.navigate("CreateAccount")}} > Crie uma conta agora</LinkBold>
 
         </TextAccount>
       </ContentAccount>
