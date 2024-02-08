@@ -13,3 +13,16 @@ export const Input = styled.TextInput.attrs(props => ({
   font-size: 16px;
   font-family: 'MontserratAlternates_600SemiBold';
 `
+
+export const InputCode = styled(Input).attrs({
+  placeholderTextColor: '#34898F',
+  keyboardType: 'numeric'
+}
+)`
+width:65px;
+height: 62px;
+flex-direction:row;
+margin: 5px 10px 20px 20px;
+
+
+`
