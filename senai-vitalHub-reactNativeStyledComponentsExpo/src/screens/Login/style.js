@@ -4,7 +4,6 @@ export const ContentAccount = styled.View`
 flex-direction: row;
 align-self: center ;
 justify-content: center;
-
 `
 export const TextAccount= styled.Text`
 text-align: center;
