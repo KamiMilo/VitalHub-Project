@@ -19,11 +19,18 @@ export const Navigation = ({ navigation }) => {
       />
 
      <Button
-        title="EmailCode"
+        title="Verification"
         onPress={
-          () => navigation.navigate("EmailCode")
+          () => navigation.navigate("Verification")
         }
       />
+
+    <Button
+        title="CreateAccount"
+        onPress={
+          () => navigation.navigate("CreateAccount")
+        }
+      />  
 
 
 

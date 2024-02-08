@@ -17,9 +17,10 @@ export const RecPassword = ({navigation}) => {
         <Input 
           placeholder="Usúario ou E-mail"
         />
-
-        <ButtonMTop> 
-          <ButtonTitle onPress={()=> {navigation.navigate("EmailCode")}}>Continuar</ButtonTitle>
+        
+        <ButtonMTop onPress={()=> {navigation.navigate("Verification")}}> 
+          <ButtonTitle>Continuar</ButtonTitle>
+          
         </ButtonMTop>
 
       </Container>

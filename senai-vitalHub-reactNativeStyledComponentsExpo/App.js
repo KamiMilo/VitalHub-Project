@@ -7,6 +7,8 @@ import { useFonts, MontserratAlternates_600SemiBold, MontserratAlternates_500Med
 import { Quicksand_500Medium} from '@expo-google-fonts/quicksand';
 
 import { RecPassword } from "./src/screens/RecPassword/RecPassword";
+import { Verification } from "./src/screens/Verification/Verification";
+import { CreateAccount } from "./src/screens/CreateAccount/CreateAccount";
 
 //  Instancia do StackNavigator
 const Stack = createNativeStackNavigator();
@@ -35,7 +37,7 @@ export default function App() {
     //  Envolve a estrutura de navegação
     <NavigationContainer>
       {/* Componente para navegação */}
-      <Stack.Navigator initialRouteName="Login">
+      <Stack.Navigator initialRouteName="Navegacao">
         {/* Tela */}
         <Stack.Screen
           //  Nome da tela
@@ -66,11 +68,20 @@ export default function App() {
 
          <Stack.Screen
           //  Nome da tela
-          name='EmailCode'
+          name='Verification'
           //  Componente que será chamdo
-          component={EmailCode}
+          component={Verification}
           //  Título da tela
-          options={{ title: 'Verificação Email' }}
+          options={{ title: 'Verifição do email' }}
+        />
+
+        <Stack.Screen
+          //  Nome da tela
+          name='CreateAccount'
+          //  Componente que será chamdo
+          component={CreateAccount}
+          //  Título da tela
+          options={{ title: 'Criar Conta' }}
         />
 
       </Stack.Navigator>
