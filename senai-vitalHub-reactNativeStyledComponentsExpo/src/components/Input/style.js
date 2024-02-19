@@ -21,8 +21,14 @@ export const InputCode = styled(Input).attrs({
 )`
 width:65px;
 height: 62px;
+font-size: 25px;
+// font-color: #496bba;
 flex-direction:row;
+// justify-content: center;
 margin: 5px 10px 20px 20px;
 
-
+`
+export const InputDescription = styled(Input)`
+    height: 121;
+    text-align: start;
 `

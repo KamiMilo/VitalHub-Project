@@ -9,6 +9,8 @@ import { Quicksand_500Medium} from '@expo-google-fonts/quicksand';
 import { RecPassword } from "./src/screens/RecPassword/RecPassword";
 import { Verification } from "./src/screens/Verification/Verification";
 import { CreateAccount } from "./src/screens/CreateAccount/CreateAccount";
+// import { UserProfile } from "./scr/screens/UserProfile/UserProfile";
+
 
 //  Instancia do StackNavigator
 const Stack = createNativeStackNavigator();
@@ -83,6 +85,16 @@ export default function App() {
           //  Título da tela
           options={{ title: 'Criar Conta' }}
         />
+
+      {/* <Stack.Screen
+          //  Nome da tela
+          name='UserProfile'
+          //  Componente que será chamdo
+          component={UserProfile}
+          //  Título da tela
+          options={{ title: 'Paciente' }}
+        /> */}
+
 
       </Stack.Navigator>
     </NavigationContainer>
