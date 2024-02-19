@@ -10,6 +10,7 @@ import { RecPassword } from "./src/screens/RecPassword/RecPassword";
 import { Verification } from "./src/screens/Verification/Verification";
 import { CreateAccount } from "./src/screens/CreateAccount/CreateAccount";
 import { Home } from "./src/screens/Home/Home";
+import { NewPassword } from "./src/screens/NewPassword/NewPassword";
 
 
 
@@ -62,6 +63,14 @@ export default function App() {
           
           component={Verification}
           options={{ title: 'Verifição do email' }}
+        />
+
+       <Stack.Screen
+          
+          name='NewPassword'
+          
+          component={NewPassword}
+          options={{ title: 'NewPassword' }}
         />
 
         <Stack.Screen

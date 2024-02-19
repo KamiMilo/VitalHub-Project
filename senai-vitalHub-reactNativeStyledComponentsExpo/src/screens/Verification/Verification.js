@@ -20,14 +20,14 @@ export const Verification = ({navigation}) => {
 
       <ConatinerCode>
 
-        <InputCode placeholder={'0'} ></InputCode>
-        <InputCode placeholder={'0'}></InputCode>
-        <InputCode placeholder={'0'}></InputCode>
-        <InputCode placeholder={'0'}></InputCode>
+        <InputCode  placeholder={'0'} ></InputCode>
+        <InputCode  placeholder={'0'}></InputCode>
+        <InputCode  placeholder={'0'}></InputCode>
+        <InputCode  placeholder={'0'}></InputCode>
 
       </ConatinerCode>
 
-        <Button onPress={()=> {navigation.navigate("Login")}}> 
+        <Button onPress={()=> {navigation.navigate("NewPassword")}}> 
           <ButtonTitle>Verificar</ButtonTitle>
         </Button>
       <LinkBold>Reenviar Código</LinkBold>

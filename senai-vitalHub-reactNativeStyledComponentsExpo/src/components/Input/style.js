@@ -27,6 +27,8 @@ width:65px;
 height: 62px;
 font-size: 25px;
 flex-direction:row;
+justify-content:center;
+align-items: center;
 margin: 5px 10px 20px 20px;
 `
 
