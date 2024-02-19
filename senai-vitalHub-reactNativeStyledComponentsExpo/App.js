@@ -9,7 +9,9 @@ import { Quicksand_500Medium} from '@expo-google-fonts/quicksand';
 import { RecPassword } from "./src/screens/RecPassword/RecPassword";
 import { Verification } from "./src/screens/Verification/Verification";
 import { CreateAccount } from "./src/screens/CreateAccount/CreateAccount";
-// import { UserProfile } from "./scr/screens/UserProfile/UserProfile";
+import { Home } from "./src/screens/Home/Home";
+
+
 
 
 //  Instancia do StackNavigator
@@ -42,58 +44,41 @@ export default function App() {
       <Stack.Navigator initialRouteName="Navegacao">
         {/* Tela */}
         <Stack.Screen
-          //  Nome da tela
-          name='Navegacao'
-          //  Componente que será chamdo
-          component={Navigation}
-          //  Título da tela
-          options={{ title: 'Navegacao' }}
-        />
-
-        <Stack.Screen
-          //  Nome da tela
+          
           name='Login'
-          //  Componente que será chamdo
           component={Login}
-          //  Título da tela
           options={{ title: 'Login' }}
         />
 
         <Stack.Screen
-          //  Nome da tela
           name='RecuperarSenha'
-          //  Componente que será chamdo
           component={RecPassword}
-          //  Título da tela
           options={{ title: 'Recuperar Senha' }}
         />
 
          <Stack.Screen
-          //  Nome da tela
+          
           name='Verification'
-          //  Componente que será chamdo
+          
           component={Verification}
-          //  Título da tela
           options={{ title: 'Verifição do email' }}
         />
 
         <Stack.Screen
-          //  Nome da tela
+          
           name='CreateAccount'
-          //  Componente que será chamdo
+          
           component={CreateAccount}
-          //  Título da tela
           options={{ title: 'Criar Conta' }}
         />
 
-      {/* <Stack.Screen
-          //  Nome da tela
-          name='UserProfile'
-          //  Componente que será chamdo
-          component={UserProfile}
-          //  Título da tela
-          options={{ title: 'Paciente' }}
-        /> */}
+      <Stack.Screen
+          
+          name='Home'
+          
+          component={Home}
+          options={{ title: 'Home' }}
+        />
 
 
       </Stack.Navigator>

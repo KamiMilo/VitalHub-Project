@@ -1,9 +1,8 @@
-import { TextInput } from "react-native-web";
 import styled from "styled-components/native";
 
-export const Input = styled.TextInput.attrs(props => ({
+export const Input = styled.TextInput.attrs({
   placeholderTextColor: "#49B3BA"
-}))`
+})`
   width: 90%;
   height: 53px;
   padding: 16px;
@@ -14,21 +13,23 @@ export const Input = styled.TextInput.attrs(props => ({
   font-family: 'MontserratAlternates_600SemiBold';
 `
 
+export const InputDescription = styled(Input)`
+    height: 121;
+    text-align: start;
+`
+
 export const InputCode = styled(Input).attrs({
   placeholderTextColor: '#34898F',
-  keyboardType: 'numeric'
+  keyboardType: 'numeric',
 }
 )`
 width:65px;
 height: 62px;
 font-size: 25px;
-// font-color: #496bba;
 flex-direction:row;
-// justify-content: center;
 margin: 5px 10px 20px 20px;
+`
 
-`
-export const InputDescription = styled(Input)`
-    height: 121;
-    text-align: start;
-`
+
+
+

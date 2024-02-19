@@ -9,6 +9,10 @@ import { ContentAccount, TextAccount } from "./style"
 import { RecPassword } from "../RecPassword/RecPassword"
 
 export const Login = ({navigation}) => {
+  const onPressRecoverPassword = () => {
+    onPress("RecPassword")
+  }
+
   return(
     <Container>
       <Logo source={require("../../assets/Logo.png")}/>
@@ -23,8 +27,9 @@ export const Login = ({navigation}) => {
         secureTextEntry={true}
       />
       
-      <LinkMedium onPress={() => {navigation.navigate("Verification")}}>Esqueceu sua Senha?</LinkMedium>
-      <Button>
+      <LinkMedium onPress={() => navigation.navigate("RecuperarSenha")}>Esqueceu sua Senha?</LinkMedium>
+
+      <Button onPress={()=> {navigation.navigate("Home")}}>
         <ButtonTitle>Entrar</ButtonTitle>
       </Button>
 

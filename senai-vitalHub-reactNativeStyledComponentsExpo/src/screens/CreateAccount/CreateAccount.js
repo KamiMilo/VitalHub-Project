@@ -30,7 +30,7 @@ export const CreateAccount = ({navigation}) => {
         secureTextEntry={true}
       />
       
-      <ButtonMTop>
+      <ButtonMTop onPress={()=> {navigation.navigate("Login")}}>
         <ButtonTitle>Cadastrar</ButtonTitle>
       </ButtonMTop>
       

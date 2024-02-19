@@ -7,7 +7,7 @@ import { Logo } from "../../components/Logo/style"
 import { SubTittle } from "../../components/Text/Text"
 import { Title } from "../../components/Title/style"
 
-export const Verification = () => {
+export const Verification = ({navigation}) => {
 
     return(
     <Container>
@@ -27,7 +27,7 @@ export const Verification = () => {
 
       </ConatinerCode>
 
-        <Button> 
+        <Button onPress={()=> {navigation.navigate("Login")}}> 
           <ButtonTitle>Verificar</ButtonTitle>
         </Button>
       <LinkBold>Reenviar Código</LinkBold>
