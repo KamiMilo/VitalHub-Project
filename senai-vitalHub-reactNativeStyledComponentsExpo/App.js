@@ -4,7 +4,7 @@ import { Login } from "./src/screens/Login";
 import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import { useFonts, MontserratAlternates_600SemiBold, MontserratAlternates_500Medium,MontserratAlternates_700Bold} from '@expo-google-fonts/montserrat-alternates';
-import { Quicksand_500Medium} from '@expo-google-fonts/quicksand';
+import { Quicksand_500Medium,Quicksand_400Regular,Quicksand_600SemiBold} from '@expo-google-fonts/quicksand';
 
 import { RecPassword } from "./src/screens/RecPassword/RecPassword";
 import { Verification } from "./src/screens/Verification/Verification";
@@ -24,7 +24,9 @@ export default function App() {
     MontserratAlternates_600SemiBold,
     MontserratAlternates_500Medium,
     MontserratAlternates_700Bold,
-    Quicksand_500Medium
+    Quicksand_500Medium,
+    Quicksand_400Regular,
+    Quicksand_600SemiBold
     
   });
 
@@ -42,7 +44,7 @@ export default function App() {
     //  Envolve a estrutura de navegação
     <NavigationContainer>
       {/* Componente para navegação */}
-      <Stack.Navigator initialRouteName="Navegacao">
+      <Stack.Navigator initialRouteName="Home">
         {/* Tela */}
         <Stack.Screen
           

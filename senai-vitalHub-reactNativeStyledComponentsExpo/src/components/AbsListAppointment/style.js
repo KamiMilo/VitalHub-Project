@@ -1,6 +1,6 @@
 import styled, { css } from "styled-components";
 
-export const ButtonTabsStyle = styled.TouchableHighlight`
+export const ButtonTabStyle = styled.TouchableHighlight`
 padding: 12px 14px;
 border-radius: 5px;
 
@@ -8,7 +8,7 @@ border-radius: 5px;
 botão estiver clicado vai aplicar esse css*/
 
 ${props => props.clickButton ? css`
-    background-color: #496bba;
+    background-color: #496BBA;
     `
         : css`
      background-color: transparent;

@@ -5,16 +5,18 @@ import { Header } from "../../components/Header/Header"
 import { CalendarHome } from "../../components/CalendarHome/CalendarHome"
 import { Container } from "../../components/Container/style"
 import { ContainerButtons } from "./style"
-import { AbsListAppointment } from "../../components/AbsListAppointment/AbsListAppointment"
+
 import { useState } from "react"
+import { ListComponent } from "../../components/List/List"
+import { AbsListAppointment } from "../../components/AbsListAppointment/AbsListAppointment"
+import { Card } from "../../components/Card/Card"
 
 
 const Consultas = [
     {id: 1, nome: "Allan" ,situacao:"pendente"},
-    {id: 2, nome: "Evelyn" ,situacao:"realizado"},
+    {id: 2, nome: "Evelyn Oliveira" ,situacao:"realizado"},
     {id: 3, nome: "Carlos" ,situacao:"cancelado"},
     {id: 4, nome: "Sara" ,situacao:"pendente"}
-
 ]
 
 export const Home = () => {
@@ -39,7 +41,7 @@ export const Home = () => {
             {/* Container  */}
             <ContainerButtons>
                 
-                <AbsListAppointment
+                <AbsListAppointment 
                 textButton={"Agendadas"}
                 clickButton={statusLista === "Agendadas"}
                 onPress={() => setStatusLista("pendente")}
@@ -61,7 +63,21 @@ export const Home = () => {
 
 
             {/* Cards */}
+            {/* Lista */}
+            <ListComponent
+            data= {Consultas}
+            keyExtractor={(item) => item.id}
+
+            renderItem={({item}) => statusLista == item.situacao && (
+                <Card
+                situacao={item.situacao} 
+                />
+            )
+        }
             
+            
+            />
+
         </Container>
 
     )
