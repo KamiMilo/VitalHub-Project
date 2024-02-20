@@ -7,10 +7,10 @@ export const Header = () => {
   return (
     <ContainerHeader>
         <BoxUser>
-          <ImageUser source={{ uri: "https://github.com/enzoquarelo.png" }} />
+          <ImageUser source={require('../../../assets/Mask-group.png')} />
           <DataUser>
             <TextDefault>Bem vindo !</TextDefault>
-            <NameUser>Dr.Enzo</NameUser>
+            <NameUser>Dr.Claudio</NameUser>
           </DataUser>
         </BoxUser>
 
