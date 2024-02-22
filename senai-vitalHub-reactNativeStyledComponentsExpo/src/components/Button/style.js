@@ -46,4 +46,13 @@ text-transform: uppercase;
 export const ButtonTitleGoogle = styled(ButtonTitle)`
 color:#496bba;
 `
+export const ButtonSecondaryTitle = styled(ButtonTitle)`
+text-transform: capitalize;
+text-decoration: underline;
+color: #344f8f;
+`
+export const ButtonSecondary = styled(Button)`
+    background-color: transparent;
+    border: none;
+`
 

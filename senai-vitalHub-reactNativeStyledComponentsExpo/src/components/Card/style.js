@@ -51,20 +51,18 @@ flex-direction:row;
 justify-content:center;
 width: 100px;
 height: 26px;
-background-color:${(props)=> props.situacao == "pendente" ? "#E8FCFD" : "#F10F5"};
 border-radius:5px;
 gap: 4px;
+background-color: ${(props) => props.situacao == "pendente" ? "#E8FCFD" : "#F1F0F5"} ;
 `
 export const ButtonText= styled.Text`
 text-align:center;
-color:${((props)=> props.situacao == "pendente" ? "#c81d25" : "#344f8f")};
+color: ${(props) => props.situacao == "pendente" ? "#c81d25" : "#344f8f"} ;
 font-size: 12px;
 font-family: 'MontserratAlternates_500Medium';
 `
 export const ButtonCardLink= styled.View`
-width: 100px;
-height: 26px;
-background-color: #ffffff;
+
 `
 
 
