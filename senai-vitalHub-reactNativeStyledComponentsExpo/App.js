@@ -44,7 +44,7 @@ export default function App() {
     //  Envolve a estrutura de navegação
     <NavigationContainer>
       {/* Componente para navegação */}
-      <Stack.Navigator initialRouteName="Home">
+      <Stack.Navigator initialRouteName="Login">
         {/* Tela */}
         <Stack.Screen
           
