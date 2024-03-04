@@ -11,7 +11,8 @@ import { Verification } from "./src/screens/Verification/Verification";
 import { CreateAccount } from "./src/screens/CreateAccount/CreateAccount";
 import { Home } from "./src/screens/Home/Home";
 import { NewPassword } from "./src/screens/NewPassword/NewPassword";
-import { MedicalRecord} from "./src/screens/MedicalRecord/MedicalRecord";
+import { MedicalRecord } from "./src/screens/medicalRecord/medicalRecord";
+
 
 
 //  Instancia do StackNavigator
@@ -43,7 +44,7 @@ export default function App() {
     //  Envolve a estrutura de navegação
     <NavigationContainer>
       {/* Componente para navegação */}
-      <Stack.Navigator initialRouteName="medicalRecord">
+      <Stack.Navigator initialRouteName="MedicalRecord">
         {/* Tela */}
         <Stack.Screen
           
@@ -93,7 +94,7 @@ export default function App() {
 
       <Stack.Screen
           
-          name='medicalRecord'
+          name='MedicalRecord'
           
           component={MedicalRecord}
           options={{ title: 'medicalRecord' }}
