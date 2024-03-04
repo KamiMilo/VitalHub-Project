@@ -2,7 +2,7 @@ import { Modal } from "react-native";
 
 import { Title } from "../Title/style";
 import { ButtonMTop, ButtonSecondary, ButtonSecondaryTitle, ButtonTitle } from "../Button/style";
-import { ContainerModal, ImageModal, ModalContainertAge, ModalContent, ModalProfileName, ModalText } from "./style";
+import { ContainerCenterModal, ContainerModal, ImageModal, ModalContainertAge, ModalContent, ModalProfileName, ModalText } from "./style";
 import { ButtonText } from "../AppointmentCard/Style";
 import { Container } from "../Container/style";
 
@@ -11,6 +11,9 @@ const ProntuarioModal = ({visible, setShowAppointment, ...rest}) => {
     
 
         <Modal {...rest} visible={visible} transparent={true} animationType="fade" >
+            <ContainerCenterModal>
+
+            {/* view */}
             <ModalContent>           
             {/* imagem */}
             <ImageModal source= {{uri:"https://github.com/evy-oliveira0807.png"}}/>
@@ -27,8 +30,9 @@ const ProntuarioModal = ({visible, setShowAppointment, ...rest}) => {
                     Cancelar
                 </ButtonSecondaryTitle>
             </ButtonSecondary>
-
             </ModalContent>
+
+        </ContainerCenterModal>
         </Modal>
 
         

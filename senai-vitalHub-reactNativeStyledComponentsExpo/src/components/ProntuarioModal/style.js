@@ -4,12 +4,14 @@ import { ProfileName } from "../AppointmentCard/Style";
 import { Modal } from "react-native-web";
 import { Container } from "../Container/style";
 
+
+
 export const PatientModal = styled.View`
     flex: 1;
     align-items:center ;
     justify-content: center ;
     background-color: rgba(0, 0, 0, 0.6) ;
-`
+    `
 
 export const ModalContent = styled.View`
     width: 90% ;
@@ -18,21 +20,19 @@ export const ModalContent = styled.View`
     background-color: #fff ;
     align-items:center ;
     justify-content:center;
-`
+    `
 
 export const ModalText = styled.Text`
-    width: 270px ;
     font-size: 16px ;
     color: #5f5c6b ;
-    line-height: 22px ;
     text-align: center ;
     margin-top: 10px ;
     font-family: "Quicksand_500Medium";
-`
+    `
 
 export const ButtonModal = styled(Button)`
     width: 80% ;
-`
+    `
 
 export const ImageModal = styled.Image`
 width: 100px;
@@ -42,5 +42,13 @@ padding: 10px 5px 10px 5px;
 export const ModalProfileName= styled(ProfileName)`
 font-size: 20px;
 margin-top: 10px;
+text-align:center
 `
 
+export const ContainerCenterModal= styled.View`
+justify-content:center;
+width:360px;
+height:640px;
+margin-left:50px;
+margin-top: 50px
+`

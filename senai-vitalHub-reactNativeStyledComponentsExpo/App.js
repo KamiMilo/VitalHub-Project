@@ -11,8 +11,7 @@ import { Verification } from "./src/screens/Verification/Verification";
 import { CreateAccount } from "./src/screens/CreateAccount/CreateAccount";
 import { Home } from "./src/screens/Home/Home";
 import { NewPassword } from "./src/screens/NewPassword/NewPassword";
-
-
+import { MedicalRecord} from "./src/screens/MedicalRecord/MedicalRecord";
 
 
 //  Instancia do StackNavigator
@@ -44,7 +43,7 @@ export default function App() {
     //  Envolve a estrutura de navegação
     <NavigationContainer>
       {/* Componente para navegação */}
-      <Stack.Navigator initialRouteName="Login">
+      <Stack.Navigator initialRouteName="medicalRecord">
         {/* Tela */}
         <Stack.Screen
           
@@ -52,6 +51,7 @@ export default function App() {
           component={Login}
           options={{ title: 'Login' }}
         />
+
 
         <Stack.Screen
           name='RecuperarSenha'
@@ -89,6 +89,14 @@ export default function App() {
           
           component={Home}
           options={{ title: 'Home' }}
+        />
+
+      <Stack.Screen
+          
+          name='medicalRecord'
+          
+          component={MedicalRecord}
+          options={{ title: 'medicalRecord' }}
         />
 
 

@@ -26,7 +26,7 @@ export const NewPassword = ({navigation}) => {
       />
 
       
-      <ButtonMTop onPress={()=> {navigation.navigate("Login")}}>
+      <ButtonMTop>
         <ButtonTitle>Cadastrar</ButtonTitle>
       </ButtonMTop>
       
