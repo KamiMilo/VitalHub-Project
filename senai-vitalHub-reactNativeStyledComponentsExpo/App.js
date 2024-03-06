@@ -12,6 +12,9 @@ import { CreateAccount } from "./src/screens/CreateAccount/CreateAccount";
 import { Home } from "./src/screens/Home/Home";
 import { NewPassword } from "./src/screens/NewPassword/NewPassword";
 import { MedicalRecord } from "./src/screens/medicalRecord/medicalRecord";
+import { HomePatient } from "./src/screens/HomePatient/HomePatient";
+
+
 
 
 
@@ -44,7 +47,7 @@ export default function App() {
     //  Envolve a estrutura de navegação
     <NavigationContainer>
       {/* Componente para navegação */}
-      <Stack.Navigator initialRouteName="MedicalRecord">
+      <Stack.Navigator initialRouteName="Navigation">
         {/* Tela */}
         <Stack.Screen
           
@@ -98,6 +101,22 @@ export default function App() {
           
           component={MedicalRecord}
           options={{ title: 'medicalRecord' }}
+        />
+
+      <Stack.Screen
+          
+          name='Navigation'
+          
+          component={Navigation}
+          options={{ title: 'Navigation' }}
+        />
+
+      <Stack.Screen
+          
+          name='HomePatient'
+          
+          component={HomePatient}
+          options={{ title: 'HomePatient' }}
         />
 
 
