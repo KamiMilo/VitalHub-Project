@@ -4,10 +4,14 @@ import { Title } from "../Title/style";
 import { ButtonMTop, ButtonSecondary, ButtonSecondaryTitle, ButtonTitle } from "../Button/style";
 import { ImageModal, ModalContent, ModalText } from "./style";
 import { ButtonText } from "../AppointmentCard/Style";
+import { ContainerCenterModal } from "../ProntuarioModal/style";
 
 const CancellationModal = ({visible, setShowModalCancel, ...rest}) => {
     return (
         <Modal {...rest} visible={visible} transparent={true} animationType="fade" style= {{marginRight: 50}} >
+            <ContainerCenterModal>
+
+            
             <ModalContent>
 
             <Title>Cancelar consulta</Title>
@@ -25,6 +29,8 @@ const CancellationModal = ({visible, setShowModalCancel, ...rest}) => {
             </ButtonSecondary>
 
             </ModalContent>
+
+            </ContainerCenterModal>
         </Modal>
     );
 };

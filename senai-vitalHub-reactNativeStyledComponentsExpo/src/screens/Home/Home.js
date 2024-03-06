@@ -36,7 +36,7 @@ export const Home = () => {
             <StatusBar />
 
             {/* Header */}
-            <Header />
+            <Header img= {require('../../../assets/Mask-group.png')} name="Dr.Claudio" />
 
             {/* Calendar */}
             <CalendarHome />

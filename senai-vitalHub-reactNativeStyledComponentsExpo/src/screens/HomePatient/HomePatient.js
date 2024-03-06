@@ -15,9 +15,10 @@ import ProntuarioModal from "../../components/ProntuarioModal/ProntuarioModal"
 
 
 const Consultas = [
+    { id: 1, nome: "Dr", situacao: "pendente" }
 ]
 
-export const Home = () => {
+export const HomePatient = () => {
 
     //Hook para renderizar a lista dependendo de qual botão for clicado
     const [statusLista, setStatusLista] = useState("pendente")
@@ -32,7 +33,9 @@ export const Home = () => {
             <StatusBar />
 
             {/* Header */}
-            <Header />
+            <Header img= {source={uri:"https://github.com/evy-oliveira0807.png" }} 
+            name="Evelyn Oliveira"
+            />
 
             {/* Calendar */}
             <CalendarHome />

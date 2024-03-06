@@ -49,6 +49,8 @@ export const ContainerCenterModal= styled.View`
 justify-content:center;
 width:360px;
 height:640px;
-margin-left:50px;
-margin-top: 50px
+margin-left:40px;
+margin-top: 50px;
+/* background-color: #000000;
+opacity: 0.5; */
 `
