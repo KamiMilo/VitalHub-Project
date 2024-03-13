@@ -1,36 +1,47 @@
-import { ClinicCards, LocationClinic, Rating,
-          NameClinic, TimeText, TimeView,
-          ViewColumn, ViewRow  } from './style'
+import { StyleSheet } from "react-native";
+import { ContainerCard, ContainerClinicCard, NameProfile } from "../AppointmentCard/Style"
+import { SubtextCard } from "../title/style";
+import { BoxInfo, BoxRating, BoxSchedule, BoxText, TextRating, TextSchedule } from "./Style";
+import { AntDesign } from '@expo/vector-icons';
+import { MaterialCommunityIcons } from '@expo/vector-icons';
 
-import { FontAwesomeIcon } from '@fortawesome/react-native-fontawesome'
-import { faCalendar } from '@fortawesome/free-regular-svg-icons'
-import { faStar } from '@fortawesome/free-solid-svg-icons/faStar'
+export const ClinicCard = ({
+    border="",
+    nome="",
+    local="",
+    rating="",
+    agenda="",
+}) => {
+    return(
+        <ContainerClinicCard border={border}  style={styles.shadow}>
+            <BoxText>
+                <NameProfile>{nome}</NameProfile>
 
-const ClinicCard = ({ nomeClinica, localClinica, avaliacao, horarioAtendimento}) => {
-  return (
-    <ClinicCards>
-      <ViewColumn>
-        <NameClinic>{nomeClinica}</NameClinic>
+                <SubtextCard>{local}</SubtextCard>
+            </BoxText>
 
-        <LocationClinic>{localClinica}</LocationClinic>
-      </ViewColumn>
+            <BoxInfo>
+                <BoxRating>
+                    <AntDesign name="star" size={19} color="#F9A620" />
+                    <TextRating>{rating}</TextRating>
+                </BoxRating>
 
-      <ViewColumn alignItems='flex-end'>
-        <ViewRow>
-          <FontAwesomeIcon icon={faStar} color='#F9A620' size={20}/>
+                <BoxSchedule>
 
-          <Rating>{avaliacao}</Rating>
-        </ViewRow>
+                    <MaterialCommunityIcons name="calendar" size={15} color="#49B3BA" />
 
-        <TimeView>
-          <FontAwesomeIcon icon={faCalendar} size={14} color='#49B3BA'/>
+                    <TextSchedule>{agenda}</TextSchedule>
+                    
+                </BoxSchedule>       
 
-          <TimeText>{horarioAtendimento}</TimeText>
-        </TimeView>
+            </BoxInfo>
+        </ContainerClinicCard>
+    )
+}
 
-      </ViewColumn>
-    </ClinicCards>
-  );
-};
-
-export default ClinicCard;
+const styles =  StyleSheet.create({
+    shadow: {
+        elevation: 5,
+        shadowColor: '#000000',
+    },
+});

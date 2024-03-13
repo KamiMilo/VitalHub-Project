@@ -1,42 +1,88 @@
-import styled from "styled-components/native";
+import styled from 'styled-components'
+import { LinearGradient } from 'expo-linear-gradient'
 
 export const Container = styled.SafeAreaView`
-  flex: 1;
-  align-items: center;
-  background-color: #FBFBFB;
-`;
-
-export const ContainerHome = styled.View`
-  flex: 1;
-  align-items: center;
-  background-color: #FBFBFB;
-`;
-
-export const ContainerScroll = styled.ScrollView`
-  flex: 1;
+    flex: 1;
+    align-items: center;
+    background-color: #FAFAFA;
 `
 
-export const ContainerImage = styled.View`
+export const ContainerBanner = styled.View`
+    flex-direction: row;
+    margin-top: 20px;
+    margin-bottom: 25px;
     width: 100%;
-    height: 280px;
-    margin-bottom: 20px;
-
-    align-Items: center;
-    justify-Content: flex-start; 
-`;
-
-export const ContainerFlex = styled.View`
-  width: 90%;
-
-  flex-direction: row;
-  align-self: center;
-  justify-content: space-between;
-  align-items: center;
-`;
+    padding-left: 20px;
+`
 
 export const ContainerLogo = styled.View`
-  width: 90%;
-  flex-direction: row;
-  justify-content: flex-start;
-  gap: 30px;
-`;
+    width: 100%;
+    margin-left: 5.5%;
+`
+
+export const LogoContainer = styled.View`
+    width: 100%;
+`
+
+export const ContainerLogoTipo = styled.View`
+    margin-top: 20px;
+    margin-bottom: 20px;
+`
+
+export const ContentRP = styled.View`
+    align-items: center;
+    width: 90%;
+`
+
+export const ContainerInput = styled.View`
+    flex-direction: row;
+    margin-bottom: 15px;
+`
+
+export const ContainerInputRP = styled(ContainerInput)`
+    margin-bottom: 0px;
+` 
+
+export const ContainerHeader = styled(LinearGradient).attrs({
+    colors: ['#60BFC5', '#496BBA'],
+    start: {x: -0.05, y: 1.08},
+    end: {x: 1, y: 0}
+})`
+    width:100%;
+    height: 102px;
+    border-radius: 0px 0px 15px 15px;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+`
+
+export const ContainerModal = styled(Container)`
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    z-index: 10;
+    background-color: rgba(0,0,0,0.6);
+    justify-content: center;
+    
+`
+
+export const DoubleContentBox = styled.View`
+    flex-direction: row;
+    width: 100%;
+    gap: 32px;
+    justify-content: center;
+    margin-top: 24px;   
+`
+
+export const SmallBox = styled.View`
+    width: 40%;
+    gap: 6px;
+`
+
+
+export const AlignContainer = styled.View`
+    width: 88%;
+    justify-content: center;
+    align-items: center;
+`
+

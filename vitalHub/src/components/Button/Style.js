@@ -1,72 +1,80 @@
-import styled from "styled-components/native";
+import styled from "styled-components";
 
-export const Button = styled.TouchableOpacity`
-  width: 90%;
-  height: 44px;
+export const ButtonLogin = styled.TouchableOpacity`
+    background-color: #496BBA;
+    width: 90%;
+    height: 44px;
+    border-radius: 5px;
+    margin-top: 15px;
 
-  margin-top: 30px;
-  align-self: center;
-  justify-content: center;
+    align-items: center;
+    justify-content: center;
+    border: #496BBA;
+`
 
-  background-color: #496bba;
-  border-radius: 5px;
-  border-color: #00bfa6;
-`;
+export const ButtonLoginVE = styled(ButtonLogin)`
+    margin-top: 30px;
+    margin-bottom: 27px;
+`
 
-export const ButtonGoogle = styled(Button)`
-  gap: 20px;
+export const ButtonGrayEdit = styled(ButtonLoginVE)`
+    margin-top: 0px;
+    background-color: #ACABB7;
+    border: 0px;
+`
 
-  margin-top: 15px;
-  flex-direction: row;
-  align-items: center;
+export const ButtonBlue = styled(ButtonGrayEdit)`
+    background-color: #496BBA;
+`
 
-  background-color: #fafafa;
-  border-color: #496bba;
-  border-width: 1px;
-`;
+export const ButtonEdit = styled(ButtonLogin)`
+    margin-top: 30px;
+    width: 100%;
+`
+export const ButtonSendProfile = styled(ButtonLogin)`
+    width: 53.7%;
+    background-color: #49B3BA;
+    border: none;
+    flex-direction: row;
+    gap: 10px;
+    margin: 0px;
+`
 
-export const ButtonSecondary = styled(Button)`
-  background-color: transparent;
-  border: none;
-  margin-bottom: 30px ;
-`;
+export const ButtonLeave = styled(ButtonLogin)`
+    margin-top: 30px;
+    width: 59%;
+    background-color: #ACABB7;
+    border: none;
+`
 
-export const ButtonModal = styled(Button)`
-  width: 285px;
-`;
+export const ButtonSchedule = styled(ButtonLoginVE)`
+    width: 100%;
+    margin-bottom: 30px;
+`
 
-export const ButtonSendImage = styled(Button)`
-  width: 172px;
-
-  margin-top: 10px;
-  align-items: center;
-  flex-direction: row;
-  align-items: center;
-  gap: 10px;
-
-  background-color: #49b3ba;
-  border-color: none;
-`;
+export const ButtonModal = styled(ButtonLoginVE)`
+    width: 285px;
+`
 
 export const ButtonCancel = styled.TouchableOpacity`
-  width: 148px;
-  height: 44px;
+   width: 100%;
+   align-items: center;
+`
 
-  margin-top: 10px;
-  align-self: center;
-  justify-content: center;
-  align-items: center;
+export const ButtonCancelProfile = styled.TouchableOpacity`
+    width: 50%;
+    height: 44px;
+    align-items: center;
+    justify-content: center;
+`
 
-  font-size: 12px;
-  font-family: "MontserratAlternates_500Medium";
-`;
+export const ButtonBox = styled(ButtonCancel)`
+    margin-bottom: 23px;
+`
 
-export const ButtonLogout = styled(Button)`
-  background-color: #c1c1c1;
-  width: 40%;
-  margin-bottom: 30px;
-`;
-
-export const ButtonEdit = styled(Button)`
-  background-color: #c1c1c1;
+export const ButtonGoogle = styled(ButtonLogin)`
+    background-color: white;
+    border: 1px solid #496BBA;
+    flex-direction: row;
+    gap: 27px;
 `

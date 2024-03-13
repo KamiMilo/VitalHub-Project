@@ -1,28 +1,48 @@
-import { Container } from '../../components/Container/Style';
-import { Logo } from '../../components/Logo/Style';
-import { Title, Subtitle } from '../../components/Title/Style';
-import { Input } from '../../components/Input/Style';
-import { Button, ButtonSecondary } from '../../components/Button/Style';
-import { ButtonSecondaryTitle, ButtonTitle } from '../../components/ButtonTitle/Style';
+import { LinkCancel } from "../../components/Links/style"
+import { ButtonLoginVE } from "../../components/button/style"
+import { Container, ContainerLogoTipo } from "../../components/container/style"
+import { Logo } from "../../components/images/style"
+import { Input } from "../../components/input/styled"
+import { ButtonTitle, RegularTextRP, Title } from "../../components/title/style"
 
-const CriarConta = () => {
-    return (
+export const CriarConta = ({navigation}) => {
+    return(
         <Container>
-            <Logo source={require("../../../assets/logo.png")}/>
-            <Title>Criar Conta</Title>
-            <Subtitle>Insira seu endereço de e-mail e senha para realizar seu cadastro.</Subtitle>
-            <Input placeholder='Usuário ou E-mail'/>
-            <Input placeholder='Senha'/>
-            <Input placeholder='Confirmar Senha'/>
-            <Button>
-                <ButtonTitle>Cadastrar</ButtonTitle>
-            </Button>
+            <ContainerLogoTipo>
+                <Logo
+                    source={require('../../assets/logo.png')}
+                />
+            </ContainerLogoTipo>
 
-            <ButtonSecondary>
-                <ButtonSecondaryTitle>Cancelar</ButtonSecondaryTitle>
-            </ButtonSecondary>
+            <Title>Entrar ou criar conta</Title>
+
+            <RegularTextRP>Insira seu endereço de e-mail e senha para realizar seu cadastro.</RegularTextRP>
+
+            <Input
+            placeholder="Usuario ou Email"
+            />
+
+            <Input
+            placeholder="Senha"
+            secureTextEntry={true}
+            />
+
+            <Input
+            placeholder="Confirmar senha"
+            secureTextEntry={true}
+            />
+            <ButtonLoginVE
+                title='Volta para login'
+                onPress={() => navigation.navigate('Login')}
+            >
+                <ButtonTitle>CADASTRAR</ButtonTitle>
+            </ButtonLoginVE>
+
+            <LinkCancel
+                title='Volta para login'
+                onPress={() => navigation.navigate('Login')}
+            >Cancelar</LinkCancel>
+            
         </Container>
-    );
-};
-
-export default CriarConta;
+    )
+}

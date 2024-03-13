@@ -1,58 +1,55 @@
-import { Container } from "../../components/Container/Style";
-import { Logo } from "../../components/Logo/Style";
-import { Title } from "../../components/Title/Style";
-import { Input } from "../../components/Input/Style";
-import { Button, ButtonGoogle } from "../../components/Button/Style";
-import { ButtonTitle } from "../../components/ButtonTitle/Style";
-import { AntDesign } from "@expo/vector-icons";
-import { ButtonTitleGoogle, ContentAccount, TextAccount } from "./Style";
-import { LinkBold, LinkMedium } from "../../components/Link/Style";
+import { Button, Image, View } from "react-native"
+import { Container } from "../../components/container/style"
+import { ImageGoogle, Logo } from "../../components/images/style"
+import { ButtonTitle, ButtonTitleGoogle, TextAccount, Title } from "../../components/title/style"
+import { Input } from "../../components/input/styled"
+import { LinkBold, LinkMedium } from "../../components/Links/style"
+import { ButtonGoogle, ButtonLogin } from "../../components/button/style"
+import { AntDesign } from '@expo/vector-icons';
+import { ContainerLogo, ContentAccount } from "./style"
 
-import { useState } from "react";
-import axios from "axios";
+export const Login = ({navigation}) => {
 
-const Login = ({ navigation }) => {
+    async function Login() {
+        navigation.replace("Main")
+    }
+    async function LoginDoctor() {
+        navigation.replace("MainDoctor")
+    }
+    return(
+        <Container>
+            <ContainerLogo>
+                <Logo
+                    source={require('../../assets/logo.png')}
+                />
+            </ContainerLogo>
 
-  // Chamar a funcao de login
-  async function Login() {
-    navigation.navigate("Main")
-  }
 
-  return (
-    <Container>
-      <Logo source={require("../../../assets/logo.png")} />
+            <Title>Entrar ou criar conta</Title>
 
-      <Title>Entrar ou criar conta</Title>
-      <Input
-        placeholder="Usuário ou Email"
-        // value={email}
-        onChangeText={(txt) => setEmail(txt)}
-      />
-      <Input
-        placeholder="Senha"
-        secureTextEntry={true}
-        // value={senha}
-        onChangeText={(txt) => setSenha(txt)}
-      />
+            <Input
+            placeholder="Usuario ou Email"
+            />
+            <Input
+            placeholder="Senha"
+            secureTextEntry={true}
+            />
 
-      <LinkMedium>Esqueceu sua senha?</LinkMedium>
+            <LinkMedium onPress={() => navigation.navigate("RecuperarSenha")}>Esqueceu sua senha?</LinkMedium>
 
-      <Button onPress={() => Login()}>
-        <ButtonTitle>Entrar</ButtonTitle>
-      </Button>
+            <ButtonLogin onPress={() => Login()}>
+                <ButtonTitle>Entrar</ButtonTitle>
+            </ButtonLogin>
 
-      <ButtonGoogle>
-        <AntDesign name="google" size={20} color={"#496BBA"} />
-        <ButtonTitleGoogle>Entrar com Google</ButtonTitleGoogle>
-      </ButtonGoogle>
+            <ButtonGoogle onPress={() => LoginDoctor()}>
+            <AntDesign name="google" size={18} color="#496BBA" />
+                <ButtonTitleGoogle>Entrar com google</ButtonTitleGoogle>
+            </ButtonGoogle>
 
-      <ContentAccount>
-        <TextAccount>
-          Não tem conta? <LinkBold>Crie uma conta agora!</LinkBold>{" "}
-        </TextAccount>
-      </ContentAccount>
-    </Container>
-  );
-};
-
-export default Login;
+            <ContentAccount>
+                <TextAccount>Nao tem conta?</TextAccount>
+                <LinkBold onPress={() => navigation.navigate('CriarConta')}>Crie uma conta agora!</LinkBold>
+            </ContentAccount>
+        </Container>
+    )
+}

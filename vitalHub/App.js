@@ -1,156 +1,166 @@
-//import libs
-import { NavigationContainer } from "@react-navigation/native";
-import { createNativeStackNavigator } from "@react-navigation/native-stack";
+import { NavigationContainer } from '@react-navigation/native';
+import { StatusBar } from 'expo-status-bar';
+import { StyleSheet, Text, View } from 'react-native';
+import { Navegation } from './src/screens/Navegation/navegation';
+import { Login } from './src/screens/login/login';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import { MainDoctor } from "./src/screens/MainDoctor/MainDoctor"
 
-//import screens
-import Login from "./src/screens/Login/Login";
-import CriarConta from "./src/screens/CriarConta/CriarConta";
-import RecuperarSenha from "./src/screens/RecuperarSenha/RecuperarSenha";
-
-//import fonts
-import {
-  useFonts,
-  MontserratAlternates_600SemiBold,
-  MontserratAlternates_700Bold,
-  MontserratAlternates_500Medium,
-} from "@expo-google-fonts/montserrat-alternates";
-
-import {
-  Quicksand_300Light, Quicksand_400Regular,
-  Quicksand_500Medium, Quicksand_600SemiBold
-} from '@expo-google-fonts/quicksand'
-
-import RedefinirSenha from "./src/screens/RedefinirSenha/RedefinirSenha";
-import VerifiqueSeuEmail from "./src/screens/VerifiqueSeuEmail/VerifiqueSeuEmail";
-import Navegacao from "./src/screens/Navegacao/Navegacao";
-import MedicoProntuario from "./src/screens/MedicoProntuario/MedicoProntuario";
-import PerfilPaciente from "./src/screens/PerfilPaciente/PerfilPaciente";
-import LocalConsulta from "./src/screens/LocalConsulta/LocalConsulta";
-import PacienteProntuario from "./src/screens/PacienteProntuario/PacienteProntuario";
-import SelecionarMedico from "./src/screens/SelecionarMedico/SelecionarMedico";
-import SelecionarClinica from "./src/screens/SelecionarClinica/SelecionarClinica";
-import Home from "./src/screens/Home/Home";
-import SelecionarData from "./src/screens/SelecionarData/SelecionarData";
-import { Main } from "./src/screens/Main/Main";
-
-//StackNavigator
+//Instancia do stack navigator
 const Stack = createNativeStackNavigator();
 
-//component
+//Import das fontes
+
+import { useFonts, MontserratAlternates_600SemiBold, MontserratAlternates_500Medium, MontserratAlternates_700Bold } from '@expo-google-fonts/montserrat-alternates';
+import { Quicksand_500Medium, Quicksand_600SemiBold, Quicksand_400Regular } from '@expo-google-fonts/quicksand';
+import { LinkMedium } from './src/components/Links/style';
+import { RecoverPassword } from './src/screens/RecoverPassword/recoverPassword';
+import { VerifyEmail } from './src/screens/VerifyEmail/VerifyEmail';
+import { ResetPassword } from './src/screens/ResetPassword/resetPassword';
+import { CriarConta } from './src/screens/CriarConta/criarConta';
+import { Profile } from './src/screens/Profile/profile';
+import { AppointmentDoctor } from './src/screens/AppointmentDoctor/appointmentDoctor';
+import { AppointmentPacient } from './src/screens/AppointmentPacient/AppointmentPacient';
+import { SelectClinic } from './src/screens/SelectClinic/SelectClinic';
+import { SelectDoctor } from './src/screens/SelectDoctor/SelectDoctor';
+import { SelectDate } from './src/screens/SelectDate/SelectDate';
+import { AppointmentLocation } from './src/screens/AppointmentLocation/AppointmentLocation';
+import { EditProfile } from './src/screens/EditProfile/EditProfile';
+import { EditMedicalRecord } from './src/screens/EditMedicalRecord/EditMedicalRecord';
+import { Main } from './src/screens/Main/Main';
+import { ScheduleModal } from './src/components/ScheduleModal/ScheduleModal';
+
 export default function App() {
-  //fonts loaded
+
   const [fontsLoaded, fontsError] = useFonts({
-    MontserratAlternates_600SemiBold, MontserratAlternates_700Bold,
-    MontserratAlternates_500Medium, Quicksand_300Light, Quicksand_400Regular,
-    Quicksand_500Medium, Quicksand_600SemiBold
-  });
+    MontserratAlternates_600SemiBold,
+    MontserratAlternates_500Medium,
+    MontserratAlternates_700Bold,
+    Quicksand_500Medium,
+    Quicksand_600SemiBold,
+    Quicksand_400Regular
+  })
 
-  if (!fontsLoaded && !fontsError) {
+  if(!fontsLoaded && !fontsError){
     return null;
-  } else {
-    return (
-      <NavigationContainer>
-        
-        <Stack.Navigator
-          screenOptions={{ headerShown : false }}
-        >
-
-          <Stack.Screen
-            name="Login"
-            component={Login}
-            options={{ title: "Login" }}
-          />
-
-          <Stack.Screen
-            name="Main"
-            component={Main}
-          />
-          
-          {/* <Stack.Screen
-            name="Navegacao"
-            component={Navegacao}
-            options={{ title: "Navegacao" }}
-          /> */}
-
-          <Stack.Screen
-            name="Cadastro"
-            component={CriarConta}
-            options={{ title: "Criar conta" }}
-          />
-
-          <Stack.Screen
-            name="Recuperar Senha"
-            component={RecuperarSenha}
-            options={{ title: "Recuperar senha" }}
-          />
-
-          <Stack.Screen
-            name="Redefinir Senha"
-            component={RedefinirSenha}
-            options={{ title: "Recuperar senha" }}
-          />
-
-          <Stack.Screen
-            name="Medico Prontuario"
-            component={MedicoProntuario}
-            options={{ title: "Medico Prontuario" }}
-          />
-
-          <Stack.Screen
-            name="Paciente Prontuario"
-            component={PacienteProntuario}
-            options={{ title: "Paciente Prontuario" }}
-          />
-
-          <Stack.Screen
-            name="Selecionar Medico"
-            component={SelecionarMedico}
-            options={{ title: "Selecionar Medico" }}
-          />
-
-          <Stack.Screen
-            name="Paciente Perfil"
-            component={PerfilPaciente}
-            options={{ title: "Paciente Perfil" }}
-          />
-
-          <Stack.Screen
-            name="Local Consulta"
-            component={LocalConsulta}
-            options={{ title: "Local Consulta" }}
-          />
-
-          <Stack.Screen
-            name="Verifique seu e-mail"
-            component={VerifiqueSeuEmail}
-            options={{ title: "Verifique seu e-mail" }}
-          />
-
-          <Stack.Screen
-            name="Selecionar clinica"
-            component={SelecionarClinica}
-            options={{ title: "Selecionar Clinica" }}
-          />
-
-          <Stack.Screen
-            name="Home"
-            component={Home}
-            options={{ title: "Home", headerShown: false }}
-          />
-
-          <Stack.Screen
-            name="Calendar"
-            component={SelecionarData}
-            options={{ title: "Calendar" }}
-          />
-
-          <Stack.Screen
-            name="Local consulta"
-            component={LocalConsulta}
-            options={{ title: "Local consulta" }}
-          />
-        </Stack.Navigator>
-      </NavigationContainer>
-    );
   }
+  return (
+    //Navegacao
+    //Container
+    //StackNavigator
+    //StackScreen
+
+    //Envolve a estrutura de navegacao
+    <NavigationContainer>
+      <Stack.Navigator
+        initialRouteName='Navegacao'
+      >
+
+
+        <Stack.Screen
+          name='Navegacao'
+          component={Navegation}
+          options={{title:'Navegacao'}}
+        />
+
+        <Stack.Screen
+          name='Login'
+          component={Login}
+          options={{title:'Login'}}
+        />
+
+        <Stack.Screen
+          name='Main'
+          component={Main}
+        />
+
+        <Stack.Screen
+          name='MainDoctor'
+          component={MainDoctor}
+        />
+
+        <Stack.Screen
+          name='RecuperarSenha'
+          component={RecoverPassword}
+          options={{title:'RecuperarSenha'}}
+        />
+
+        <Stack.Screen
+          name='VerifyEmail'
+          component={VerifyEmail}
+          options={{title:'VerifyEmail'}}
+        />
+        <Stack.Screen
+          name='ResetPassword'
+          component={ResetPassword}
+          options={{title:'Redefinir senha'}}
+        />
+        <Stack.Screen
+          name='CriarConta'
+          component={CriarConta}
+          options={{title:'Criar conta'}}
+        />
+        <Stack.Screen
+          name='Profile'
+          component={Profile}
+          options={{title:'Perfil'}}
+        />
+        <Stack.Screen
+          name='AppointmentDoctor'
+          component={AppointmentDoctor}
+          options={{title:'Consulta doutor'}}
+        />
+        <Stack.Screen
+          name='AppointmentPacient'
+          component={AppointmentPacient}
+          options={{title:'Consulta paciente'}}
+        />
+        <Stack.Screen
+          name='SelectClinic'
+          component={SelectClinic}
+          options={{title:'Selecionar clinica'}}
+        />
+        <Stack.Screen
+          name='SelectDoctor'
+          component={SelectDoctor}
+          options={{title:'Selecionar medico'}}
+        />
+        <Stack.Screen
+          name='SelectDate'
+          component={SelectDate}
+          options={{title:'Selecionar data'}}
+        />
+        <Stack.Screen
+          name='AppointmentLocation'
+          component={AppointmentLocation}
+          options={{title:'Ver local'}}
+        />
+        <Stack.Screen
+          name='EditProfile'
+          component={EditProfile}
+          options={{title:'Editar perfil'}}
+        />
+        <Stack.Screen
+          name='EditMedicalRecord'
+          component={EditMedicalRecord}
+          options={{title:'Editar prontuário'}}
+        />
+        <Stack.Screen
+          name='ScheduleModal'
+          component={ScheduleModal}
+          options={{title:'Agendar consulta'}}
+        />
+        
+      </Stack.Navigator>
+    </NavigationContainer>
+  );
 }
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: '#fff',
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+});
