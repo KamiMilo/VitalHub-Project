@@ -1,31 +1,30 @@
-import { AppointmentContent, ModalContent, ModalImage, RowTextModal, TextModal } from "./style";
+import {
+  AppointmentContent,
+  ModalContent,
+  TextModal,
+  ModalImage,
+  RowTextModal,
+} from "./style";
 import { Modal } from "react-native";
 
-import { Title } from "../Title/Style";
-import { ButtonModal, ButtonCancel } from "../Button/Style";
-import { ButtonTitle, ButtonSecondaryTitle } from "../ButtonTitle/Style";
+
+
+import { Title } from "../Title/style";
+import { ButtonModal, ButtonSecondaryTitle, ButtonTitle } from "../Button/style";
 
 const AppointmentModal = ({
   situacao,
   visible,
-  navigation,
   setShowModalAppointment,
   typeProfile = "paciente",
   ...rest
 }) => {
-
-  async function handleClose( screen ){
-    await setShowModalAppointment(false)
-
-    navigation.replace( screen )
-  }
-
   return (
     <Modal {...rest} visible={visible} transparent={true} animationType="fade">
       <AppointmentContent>
         <ModalContent>
           <ModalImage
-            source={require("../../../assets/profileLargeDoctor.png")}
+            source={require("../../../assets/Mask-group.png")}
           />
 
           <Title>Dr. Claudio</Title>
@@ -37,11 +36,11 @@ const AppointmentModal = ({
           </RowTextModal>
 
           {situacao !== "pendente" ? (
-            <ButtonModal onPress={ () => handleClose("Medico Prontuario") } >
+            <ButtonModal>
               <ButtonTitle>Inserir prontuário </ButtonTitle>
             </ButtonModal>
           ) : (
-            <ButtonModal onPress={ () => handleClose("Local consulta") }>
+            <ButtonModal>
               <ButtonTitle>Ver local da consulta </ButtonTitle>
             </ButtonModal>
           )}

@@ -2,6 +2,7 @@ import styled from 'styled-components/native'
 
 export const AppointmentContent = styled.View`
   flex: 1;
+  /* width: 415px; */
   align-items: center;
   justify-content: center;
   background-color: rgba(0, 0, 0, 0.60);

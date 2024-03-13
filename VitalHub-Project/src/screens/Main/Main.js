@@ -5,12 +5,11 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs'
 const BottomTab = createBottomTabNavigator()
 
 // Importando as telas
-import Home from '../Home/Home'
-import PerfilPaciente from '../PerfilPaciente/PerfilPaciente'
 
 import { FontAwesome, FontAwesome5 } from '@expo/vector-icons'
+import { Home } from '../Home/Home'
+import { ProfilePacient } from '../ProfilePacient/ProfilePacient'
 
-import { ContentIcon, TextIcon } from './Style'
 
 export const Main = () => {
   return (
@@ -58,7 +57,7 @@ export const Main = () => {
 
       <BottomTab.Screen 
         name="Perfil"
-        component={ PerfilPaciente }
+        component={ ProfilePacient }
       />
     </BottomTab.Navigator>
   )

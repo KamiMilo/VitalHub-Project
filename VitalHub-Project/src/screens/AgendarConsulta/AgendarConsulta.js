@@ -1,12 +1,16 @@
 import { ViewContainer, ModalContent, ViewOption } from './Style'
 import { Modal } from 'react-native'
 
-import { Title } from '../../components/Title/Style'
+
 import { Label } from '../../components/Label/Style'
-import { Input, InputCheckbox, TextInputCheckbox } from '../../components/Input/Style'
-import { Button, ButtonSecondary } from '../../components/Button/Style'
+
+
 import { ButtonSecondaryTitle, ButtonTitle } from '../../components/ButtonTitle/Style'
 import { useEffect, useState } from 'react'
+import { Title } from '../../components/Title/style'
+import { Input, TextInputCheckbox } from '../../components/Input/style'
+import { Button, ButtonSecondary } from '../../components/Button/style'
+
 
 const types = [
   { id : 0, tipo : 'Rotina'},
@@ -14,17 +18,11 @@ const types = [
   { id : 2, tipo : 'Urgência'}
 ]
 
-const AgendarConsulta = ({ navigation, visible = true, setShowModalAgendamento, ...rest }) => {
+const AgendarConsulta = ({ visible = true, setShowModalAgendamento, ...rest }) => {
   const [tipoConsulta, setTipoConsulta] = useState('')
 
-  async function handleContinue(){
-    await setShowModalAgendamento(false)
-
-    navigation.replace("Selecionar clinica")
-  }
-
   return ( 
-    <Modal { ...rest } visible={visible} transparent={true} animationType='fade' animationOutTiming={0}>
+    <Modal { ...rest } visible={visible} transparent={true} animationType='fade'>
       <ModalContent>
         <ViewContainer>
 
@@ -56,7 +54,7 @@ const AgendarConsulta = ({ navigation, visible = true, setShowModalAgendamento, 
           <Label>Qual a localização desejada</Label>
           <Input placeholder='Informe a localização' />
 
-          <Button onPress={ () => handleContinue()}>
+          <Button>
             <ButtonTitle>
               Continuar
             </ButtonTitle>

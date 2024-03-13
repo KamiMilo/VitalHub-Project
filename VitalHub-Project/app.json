@@ -1,0 +1,41 @@
+{
+  "expo": {
+    "name": "VitalHub-Project",
+    "slug": "VitalHub-Project",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/SplashScreen.png",
+    
+    "userInterfaceStyle": "light",
+    "splash": {
+      "image": "./assets/SplashScreen.png",
+      "resizeMode": "cover",
+      "backgroundColor": "#ffffff"
+    },
+    "assetBundlePatterns": [
+      "**/*"
+    ],
+    "ios": {
+      "supportsTablet": true
+    },
+    "android": {
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/SplashScreen.png",
+        "backgroundColor": "#49B3BA"
+      }
+    },
+    "web": {
+      "favicon": "./assets/favicon.png"
+    },
+    "plugins": [
+      [
+        "expo-font",
+        {
+          "fonts": ["node_modules/@expo-google-fonts/montserrat"],
+          "fonts": ["node_modules/@expo-google-fonts/quicksand"],
+          "fonts": ["node_modules/@expo-google-fonts/montserrat-alternates"]
+        }
+      ]
+    ]
+  }
+}
