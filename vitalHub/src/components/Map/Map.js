@@ -1,6 +1,6 @@
 import { StatusBar } from 'expo-status-bar';
 import { ActivityIndicator, StyleSheet, Text, View, useColorScheme } from 'react-native';
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 
 //para traçar uma rota entre dois pontos
 import MapViewDirections from 'react-native-maps-directions';
@@ -8,21 +8,22 @@ import MapViewDirections from 'react-native-maps-directions';
 import MapView, { Marker, PROVIDER_GOOGLE } from 'react-native-maps';
 import {
   requestForegroundPermissionsAsync,//solicita o acesso a localização atual do usuario
-  getCurrentPositionAsync //Recebe a localização atual
+  getCurrentPositionAsync, //Recebe a localização atual
+  watchPositionAsync,
+  LocationAccuracy
 }
   from 'expo-location'
 import { mapskey } from '../../utils/mapsApiKey';
 
 
 export const Map = () => {
+  const mapReference = useRef(null);
   //constante para guardar a posição inicial da localizção do dispositivo
   const [initialPosition, setInitialPosition] = useState(null)
   //constante para guardar ponto da clinica
   const [clinicLocation, setclinicLocation] = useState({
     latitude: -23.6230,
     longitude: -46.5511,
-    latitudeDelta: 0.005,
-    longitudeDelta: 0.005
   })
 
   //função para capturar localização do dispositivo
@@ -41,8 +42,55 @@ export const Map = () => {
 
   //useffect para função
   useEffect(() => {
+
+    catchLocation()
+    //Monitora em tempo real
+    watchPositionAsync(
+      {
+        accuracy: LocationAccuracy.Highest,
+        timeInterval: 1000,
+        distanceInterval : 1,
+
+      },
+      async (response) => {
+        // recebe e guarda a nova localização
+        await setInitialPosition( response )
+
+        // mapReference.current?.animateCamera({
+        //   pitch :60,
+        //   center : response.coords
+        // })
+        console.log(response)
+      }
+    )
+
     catchLocation()
   }, [1000])
+
+  async function RecarregarVisualizacaoMapa() {
+    if (mapReference.current && initialPosition) {
+      await mapReference.current.fitToCoordinates(
+        [{
+          latitude: initialPosition.coords.latitude,
+          longitude: initialPosition.coords.longitude
+        },
+        {
+          latitude: clinicLocation.latitude,
+          longitude: clinicLocation.longitude
+        }],
+        {
+          /* Obrigatorio passar dessa forma os parametros */
+          edgePadding: { top : 60, right : 60, bottom : 60, left : 60 },
+          animated: true
+        }
+      )
+    }
+  }
+
+  useEffect(() => {
+    RecarregarVisualizacaoMapa()
+  }, [initialPosition])
+
 
   return (
     <View style={styles.container}>
