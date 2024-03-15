@@ -11,8 +11,15 @@ import { MaterialCommunityIcons } from '@expo/vector-icons';
 import { ButtonBox, ButtonCancel, ButtonCancelProfile, ButtonEdit, ButtonSendProfile } from "../../components/button/style"
 import { LinkCancel, LinkCancelProfile } from "../../components/Links/style"
 import { AlignButton, AlingnButtonProfile } from "../AppointmentLocation/Style"
+import { CameraScreen } from "../CameraScreen/CameraScreen"
+import { useState } from "react"
 
-export const EditMedicalRecord = ({navigation}) => {
+
+export const EditMedicalRecord = ({navigation, route}) => {
+
+    //constante para receber os parametros da uri
+    const [photoCap, setphotoCap] = useState(route.params )
+
     return(
         <ScrollContainer>
 
@@ -61,10 +68,11 @@ export const EditMedicalRecord = ({navigation}) => {
                         />
                     </InputProfileBox>
 
-                    <InputProfileBox>
+                    {/* componente para receber a Uri Imagem  */}
+                    <InputProfileBox >
                         <LabelLocal>Exames médicos</LabelLocal>
-                        <ContainerPhoto>
-                            <AntDesign name="exclamationcircle" size={20} color="#4E4B59" />
+                        <ContainerPhoto >
+                            <AntDesign  name="exclamationcircle" size={20} color="#4E4B59"/>
                             <TextPhoto>Nenhuma foto informada</TextPhoto>
                         </ContainerPhoto>
                     </InputProfileBox>
@@ -72,7 +80,7 @@ export const EditMedicalRecord = ({navigation}) => {
                     <DoubleContentBoxEP>
                         <ButtonSendProfile>
                             <MaterialCommunityIcons name="camera-plus-outline" size={24} color="white" />
-                            <ButtonTitle>Enviar</ButtonTitle>
+                            <ButtonTitle onPress={() => navigation.navigate('CameraScreen')}>Enviar</ButtonTitle>
                         </ButtonSendProfile>
 
                         <ButtonCancelProfile>
@@ -91,7 +99,7 @@ export const EditMedicalRecord = ({navigation}) => {
                     </InputProfileBox>
 
                     <AlingnButtonProfile>
-                        <ButtonBox onPress={() => navigation.goBack()}>
+                        <ButtonBox >
                             <LinkCancel >Voltar</LinkCancel>
                         </ButtonBox>
                     </AlingnButtonProfile>
