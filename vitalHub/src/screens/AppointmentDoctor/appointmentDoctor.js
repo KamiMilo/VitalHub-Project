@@ -29,7 +29,7 @@ export const AppointmentDoctor = ({navigation}) => {
     const [showModalCancel, setShowModalCancel] = useState(false);
     const [showModalAppointment, setShowModalAppointment] = useState(false);
 
-    const[statusLista, setStatusLista] = useState("pedente"); 
+    const[statusLista, setStatusLista] = useState("pendente"); 
 
     //define padrão pt-br para calendário
     moment.updateLocale("pt-br", {
@@ -104,6 +104,9 @@ export const AppointmentDoctor = ({navigation}) => {
 
                 //scroll da barra
                 scrollable={true}
+
+                //se falso ele vai começar a partir do dia 1 do mes atual
+                useIsoWeekday={false}
             />
 
             {/* Container */}

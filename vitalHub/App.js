@@ -54,9 +54,9 @@ export default function App() {
     //Envolve a estrutura de navegacao
     <NavigationContainer>
       <Stack.Navigator
-        initialRouteName='Navegacao'
+        initialRouteName='Main'
+        screenOptions={{headerShown: false}}
       >
-
 
         <Stack.Screen
           name='Navegacao'
