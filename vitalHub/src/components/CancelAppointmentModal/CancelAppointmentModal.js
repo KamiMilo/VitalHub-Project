@@ -4,7 +4,9 @@ import { ButtonBox, ButtonCancel, ButtonLoginVE, ButtonModal } from "../button/s
 import { ContainerModal } from "../container/style"
 import { ButtonTitle, RegularText, RegularTextModal, Title, TitleM, TitleModal } from "../title/style"
 import { ContainerBoxModal, ModalCancel, PacientModal } from "./Style"
+
 import * as Notifications from "expo-notifications";
+import { useEffect } from "react"
 
 export const CancelAppointmentModal = ({
     visible, setShowModalCancel, onPressConfirmation, ...rest
@@ -17,7 +19,7 @@ export const CancelAppointmentModal = ({
     Notifications.setNotificationHandler({
         handleNotification: async () => ({
             shouldShowAlert: true,//alerta da notificação
-            shouldPlaySound: true, //se a notificação terá som ou não
+            shouldPlaySound: false, //se a notificação terá som ou não
             shouldSetBadge: false //mostra o numero de notificações no icone do app
         })
     });
@@ -32,8 +34,8 @@ export const CancelAppointmentModal = ({
 
           await Notifications.scheduleNotificationAsync({
             content: {
-              title: "hello world!",
-              body: "criando uma poc para implementar expo notification"
+              title: "Consulta Cancelada!",
+              body: "uma consulta foi cancela ,toque para saber mais"
             }, 
             trigger : null
           }) 
@@ -41,12 +43,14 @@ export const CancelAppointmentModal = ({
 
     return (
 
-        <ModalCancel {...rest} visible={visible} transparent={true} animationType="fade">
+        <ModalCancel {...rest} visible={visible} transparent={true} animationType="fade"
+        >
             <PacientModal>
                 <ContainerBoxModal>
                     <TitleM>Cancelar consulta</TitleM>
                     <RegularTextModal>Ao cancelar essa consulta, abrirá uma possível disponibilidade no seu horário, deseja mesmo cancelar essa consulta?</RegularTextModal>
-                    <ButtonModal onPress={onPressConfirmation}>
+                    <ButtonModal onPress={() => {onPressConfirmation
+                    handleNotification()}}>
                         <ButtonTitle>Confirmar</ButtonTitle>
                     </ButtonModal>
 
