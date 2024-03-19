@@ -32,8 +32,8 @@ export const CancelAppointmentModal = ({
 
           await Notifications.scheduleNotificationAsync({
             content: {
-              title: "hello world!",
-              body: "criando uma poc para implementar expo notification"
+              title: "Consulta cancelada",
+              body: "uma consulta foi cancelada. toque para saber mais"
             }, 
             trigger : null
           }) 
@@ -41,7 +41,7 @@ export const CancelAppointmentModal = ({
 
     return (
 
-        <ModalCancel {...rest} visible={visible} transparent={true} animationType="fade">
+        <ModalCancel {...rest} visible={visible} transparent={true} animationType="fade" >
             <PacientModal>
                 <ContainerBoxModal>
                     <TitleM>Cancelar consulta</TitleM>

@@ -2,8 +2,8 @@ import styled from "styled-components";
 
 export const ContainerAppointmentButton = styled.TouchableOpacity`
     position: absolute;
-    right: -41.5%;
-    bottom: -0%;
+    right: -60%;
+    bottom: 65px;
     
     z-index: 10;
     height: 60px;
