@@ -79,19 +79,14 @@ export const DateTime = styled.Text`
 `
 
 export const ButtonCard = styled.TouchableOpacity`
-padding-bottom: 5px;
-padding-top: 5px;
 
 `
 
 export const ButtonText = styled.Text`
-    padding-top: 4px;
-    padding-bottom: 4px;
     color: #C81D25;
-    text-decoration: none;
+    text-decoration: underline;
     font-family: MontserratAlternates_500Medium;
     font-size: 12px;
-    text-align: center;
 `
 
 export const ButtonTextPront = styled(ButtonText)`

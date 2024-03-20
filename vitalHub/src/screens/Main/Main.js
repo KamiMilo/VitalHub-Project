@@ -54,7 +54,7 @@ export const Main = () => {
 
             <BottomTab.Screen
                 name='Perfil'
-                component={Profile }
+                component={ EditProfile }
             />
 
         </BottomTab.Navigator>

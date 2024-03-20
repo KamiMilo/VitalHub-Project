@@ -2,7 +2,7 @@ import { NavigationContainer } from '@react-navigation/native';
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View } from 'react-native';
 import { Navegation } from './src/screens/Navegation/navegation';
-import { Login } from './src/screens/Login/Login';
+import { Login } from './src/screens/login/login';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { MainDoctor } from "./src/screens/MainDoctor/MainDoctor"
 
@@ -29,7 +29,7 @@ import { EditProfile } from './src/screens/EditProfile/EditProfile';
 import { EditMedicalRecord } from './src/screens/EditMedicalRecord/EditMedicalRecord';
 import { Main } from './src/screens/Main/Main';
 import { ScheduleModal } from './src/components/ScheduleModal/ScheduleModal';
-import { CameraScreen } from './src/screens/CameraScreen/CameraScreen';
+import CaptureCam from './src/screens/CaptureCam';
 
 export default function App() {
 
@@ -42,7 +42,7 @@ export default function App() {
     Quicksand_400Regular
   })
 
-  if (!fontsLoaded && !fontsError) {
+  if(!fontsLoaded && !fontsError){
     return null;
   }
   return (
@@ -54,20 +54,20 @@ export default function App() {
     //Envolve a estrutura de navegacao
     <NavigationContainer>
       <Stack.Navigator
-        initialRouteName='Main'
-        screenOptions={{headerShown: false}}
+        initialRouteName='EditMedicalRecord'
       >
+
 
         <Stack.Screen
           name='Navegacao'
           component={Navegation}
-          options={{ title: 'Navegacao' }}
+          options={{title:'Navegacao'}}
         />
 
         <Stack.Screen
           name='Login'
           component={Login}
-          options={{ title: 'Login' }}
+          options={{title:'Login'}}
         />
 
         <Stack.Screen
@@ -83,82 +83,81 @@ export default function App() {
         <Stack.Screen
           name='RecuperarSenha'
           component={RecoverPassword}
-          options={{ title: 'RecuperarSenha' }}
+          options={{title:'RecuperarSenha'}}
         />
 
         <Stack.Screen
           name='VerifyEmail'
           component={VerifyEmail}
-          options={{ title: 'VerifyEmail' }}
+          options={{title:'VerifyEmail'}}
         />
         <Stack.Screen
           name='ResetPassword'
           component={ResetPassword}
-          options={{ title: 'Redefinir senha' }}
+          options={{title:'Redefinir senha'}}
         />
         <Stack.Screen
           name='CriarConta'
           component={CriarConta}
-          options={{ title: 'Criar conta' }}
+          options={{title:'Criar conta'}}
         />
         <Stack.Screen
           name='Profile'
           component={Profile}
-          options={{ title: 'Perfil' }}
+          options={{title:'Perfil'}}
         />
         <Stack.Screen
           name='AppointmentDoctor'
           component={AppointmentDoctor}
-          options={{ title: 'Consulta doutor' }}
+          options={{title:'Consulta doutor'}}
         />
         <Stack.Screen
           name='AppointmentPacient'
           component={AppointmentPacient}
-          options={{ title: 'Consulta paciente' }}
+          options={{title:'Consulta paciente'}}
         />
         <Stack.Screen
           name='SelectClinic'
           component={SelectClinic}
-          options={{ title: 'Selecionar clinica' }}
+          options={{title:'Selecionar clinica'}}
         />
         <Stack.Screen
           name='SelectDoctor'
           component={SelectDoctor}
-          options={{ title: 'Selecionar medico' }}
+          options={{title:'Selecionar medico'}}
         />
         <Stack.Screen
           name='SelectDate'
           component={SelectDate}
-          options={{ title: 'Selecionar data' }}
+          options={{title:'Selecionar data'}}
         />
         <Stack.Screen
           name='AppointmentLocation'
           component={AppointmentLocation}
-          options={{ title: 'Ver local' }}
+          options={{title:'Ver local'}}
         />
         <Stack.Screen
           name='EditProfile'
           component={EditProfile}
-          options={{ title: 'Editar perfil' }}
+          options={{title:'Editar perfil'}}
         />
         <Stack.Screen
           name='EditMedicalRecord'
           component={EditMedicalRecord}
-          options={{ title: 'Editar prontuário' }}
+          options={{title:'Editar prontuário'}}
         />
         <Stack.Screen
           name='ScheduleModal'
           component={ScheduleModal}
-          options={{ title: 'Agendar consulta' }}        />
-
-        <Stack.Screen
-          name='CameraScreen'
-          component={CameraScreen}
-          options={{ title: 'Camera' }}
+          options={{title:'Agendar consulta'}}
         />
-
-
-
+        <Stack.Screen
+          name='CaptureCam'
+          component={CaptureCam}
+          options={{title:'Catptura Camera'}}
+        />
+        
+        
       </Stack.Navigator>
     </NavigationContainer>
   );

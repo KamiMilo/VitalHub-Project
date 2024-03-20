@@ -1,4 +1,4 @@
-import { ScrollView } from "react-native"
+import { Image, ScrollView } from "react-native"
 import { AlignContainer, Container } from "../../components/container/style"
 import { ImageProfile } from "../../components/images/style"
 import { ButtonTitle, InfoTextProfile, LabelLocal, ProfileName, TextPhoto } from "../../components/title/style"
@@ -11,15 +11,11 @@ import { MaterialCommunityIcons } from '@expo/vector-icons';
 import { ButtonBox, ButtonCancel, ButtonCancelProfile, ButtonEdit, ButtonSendProfile } from "../../components/button/style"
 import { LinkCancel, LinkCancelProfile } from "../../components/Links/style"
 import { AlignButton, AlingnButtonProfile } from "../AppointmentLocation/Style"
-import { CameraScreen } from "../CameraScreen/CameraScreen"
-import { useState } from "react"
 
 
-export const EditMedicalRecord = ({navigation, route}) => {
+export const EditMedicalRecord = ({navigation , route}) => {
 
-    //constante para receber os parametros da uri
-    const [photoCap, setphotoCap] = useState(route.params )
-
+    console.log(route.params?.foto)
     return(
         <ScrollContainer>
 
@@ -68,19 +64,20 @@ export const EditMedicalRecord = ({navigation, route}) => {
                         />
                     </InputProfileBox>
 
-                    {/* componente para receber a Uri Imagem  */}
-                    <InputProfileBox >
+                    <InputProfileBox>
                         <LabelLocal>Exames médicos</LabelLocal>
-                        <ContainerPhoto >
-                            <AntDesign  name="exclamationcircle" size={20} color="#4E4B59"/>
+                        <ContainerPhoto>
+                            <AntDesign name="exclamationcircle" size={20} color="#4E4B59" />
                             <TextPhoto>Nenhuma foto informada</TextPhoto>
+                            {route.params?.foto && <Image source={{ uri: route.params.foto }} style={{width:'100%', height:111}} />}
                         </ContainerPhoto>
                     </InputProfileBox>
 
                     <DoubleContentBoxEP>
-                        <ButtonSendProfile>
+                        <ButtonSendProfile onPress={()=>{navigation.navigate('CaptureCam')}}>
+                        
                             <MaterialCommunityIcons name="camera-plus-outline" size={24} color="white" />
-                            <ButtonTitle onPress={() => navigation.navigate('CameraScreen')}>Enviar</ButtonTitle>
+                            <ButtonTitle>Enviar</ButtonTitle>
                         </ButtonSendProfile>
 
                         <ButtonCancelProfile>
@@ -99,7 +96,7 @@ export const EditMedicalRecord = ({navigation, route}) => {
                     </InputProfileBox>
 
                     <AlingnButtonProfile>
-                        <ButtonBox >
+                        <ButtonBox onPress={() => navigation.goBack()}>
                             <LinkCancel >Voltar</LinkCancel>
                         </ButtonBox>
                     </AlingnButtonProfile>
